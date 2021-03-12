@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJS Punchbag Game</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://unpkg.com/vue"></script>
+</head>
+	<body>
+
+		<div id="vue-app">
+			<!-- bag image -->
+			<div id="bag" :class="{burst: gameOver}"></div>
+
+
+
+			<!-- bag health -->
+			<div id="bag-health">
+				<div :style="{width: health + '%'}"></div>
+			</div>
+
+			<!-- game controls -->
+			<div id="controls">
+				
+				<button @click="punch" v-show="!gameOver">Punch</button>
+				<button @click="restart">Restart</button>
+			</div>
+	
+
+
+
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>
