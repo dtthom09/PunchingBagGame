@@ -9,25 +9,21 @@
 
 		<div id="vue-app">
 			<!-- bag image -->
-			<div id="bag" :class="{burst: gameOver}"></div>
-
-
+			<div id="bag" @click="punch" 
+			:class="{burst: gameOver}" 
+			style="cursor : grabbing"></div>
 
 			<!-- bag health -->
 			<div id="bag-health">
-				<div :style="{width: health + '%'}"></div>
+				<div style="cursor: progress" 
+				:style="{width: health + '%'}"></div>
 			</div>
 
 			<!-- game controls -->
-			<div id="controls">
-				
-				<button @click="punch" v-show="!gameOver">Punch</button>
-				<button @click="restart">Restart</button>
+			<div id="controls">				
+				<button @click="punch" v-show="!gameOver" style="cursor:crosshair">Punch</button>
+				<button @click="restart" style="cursor:help">Restart</button>
 			</div>
-	
-
-
-
 		</div>
 
 		<script src="app.js"></script>
